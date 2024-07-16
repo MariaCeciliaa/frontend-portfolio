@@ -14,8 +14,14 @@
   .texto-sobre{
       width: 600px;
       >p{
-          font-size: 18px;
+          font-size: 22px;
           line-height: 30px;
+          font-weight: 200;
       }
   }
   
+  a{
+    color: white;
+    font-size: 22px;
+    font-weight: 200;
+  }
