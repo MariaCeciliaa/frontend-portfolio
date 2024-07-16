@@ -1,0 +1,21 @@
+
+  .projetos{
+      display: flex;
+      color: white;
+      height: auto;
+      padding: 10rem 4rem;
+  }
+  
+  .container-conteudo{
+    display: flex;
+    margin: 8rem auto;
+  }
+  
+  .texto-sobre{
+      width: 600px;
+      >p{
+          font-size: 18px;
+          line-height: 30px;
+      }
+  }
+  
