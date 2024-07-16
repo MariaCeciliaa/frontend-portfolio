@@ -1,9 +1,8 @@
 .footer {
-    background-color: #333;
+    background-color: var(--app-background-color);
     color: #fff;
     padding: 1rem 0;
     text-align: center;
-
 
     .container {
       max-width: 1200px;
