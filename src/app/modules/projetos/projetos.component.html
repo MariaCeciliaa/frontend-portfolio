@@ -5,7 +5,22 @@
             <p>
                Todos os meus projetos já criados se encontram no meu perfil do Github.
             </p>
-            <a href="https://github.com/MariaCeciliaa" target="_blank">Aqui!!</a>
+            <a href="https://github.com/MariaCeciliaa" target="_blank" style="text-decoration: none;">Aqui!!</a>
+
+            <div class="projects-container">
+                <h2>Meus Projetos no GitHub</h2>
+                <div *ngIf="repos.length > 0">
+                  <div *ngFor="let repo of repos" class="project">
+                    <h3>{{ repo.name }}</h3>
+                    <p>{{ repo.description }}</p>
+                    <a [href]="repo.html_url" target="_blank">Acessar Repositório</a>
+                  </div>
+                </div>
+                <div *ngIf="repos.length === 0">
+                  <p>Nenhum repositório encontrado.</p>
+                </div>
+            </div>
+            
         </div>
     </div>
 </div>

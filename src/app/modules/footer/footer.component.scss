@@ -1,9 +1,9 @@
 .footer {
     background-color: var(--app-background-color);
-    color: black;
     padding: 1rem 0;
     text-align: center;
     border-radius: 20px 20px 0 0;
+    box-shadow: rgba(0, 0, 0, 0.377) 0px 22px 70px 4px;
 
     .container {
       margin: 0 auto;
@@ -11,6 +11,7 @@
   
     .text-muted {
       font-size: 20px;
+      color: #551A8B;
     }
   }
   
