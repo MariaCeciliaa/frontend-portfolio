@@ -2,6 +2,7 @@ import { HttpClient, HttpHeaders } from '@angular/common/http';
 import { Injectable } from '@angular/core';
 import { Observable, forkJoin } from 'rxjs';
 import { map, switchMap } from 'rxjs/operators';
+import { environment } from '../../environments/environment.development';
 
 @Injectable({
   providedIn: 'root'
@@ -9,7 +10,7 @@ import { map, switchMap } from 'rxjs/operators';
 export class GithubService {
 
   private username = 'MariaCeciliaa'; 
-  private token = 'teste'; //expira dia 01/07/2025
+  private token = environment.token;
   private apiUrl = `https://api.github.com/users/${this.username}/repos`;
 
   constructor(private http: HttpClient) {}
