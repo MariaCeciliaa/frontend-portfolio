@@ -57,8 +57,7 @@
                   "maximumError": "4kB"
                 }
               ],
-              "outputHashing": "all",
-              "baseHref": "frontend-portfolio"
+              "outputHashing": "all"
             },
             "development": {
               "optimization": false,
