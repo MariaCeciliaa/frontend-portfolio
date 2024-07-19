@@ -13,7 +13,8 @@ export const appConfig: ApplicationConfig = {
     provideRouter(routes), 
     GithubService, 
     provideHttpClient(), 
-    provideAnimations(), provideAnimationsAsync()
+    provideAnimations(), 
+    provideAnimationsAsync()
   ],
 };
 
