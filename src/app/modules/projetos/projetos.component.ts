@@ -42,10 +42,12 @@ export class ProjetosComponent implements OnInit{
   constructor(private githubService: GithubService) { }
 
   ngOnInit(): void {
-    this.githubService.getRepos().subscribe((data: any[]) => {
+    this.githubService.getReposWithLanguages().subscribe(data => {
       this.repos = data;
-    }, (error) => {
-      console.error('Erro ao obter repositórios', error);
     });
+  }
+
+  hasLanguages(repo: any): boolean {
+    return repo.languages && Object.keys(repo.languages).length > 0;
   }
 }

@@ -3,7 +3,7 @@
     display: flex;
     color: white;
     height: auto;
-    padding: 10rem 4rem 2rem 4rem;
+    padding: 10rem 4rem 0rem 4rem;
 }
 
 .container-conteudo{
@@ -29,43 +29,59 @@
 
 
 
-//Carrossel
-
+// Carrossel
 .projects-container {
-  height: 500px;
-
+  height: auto;
+  padding: 2rem 0;
+  
   h2 {
-    text-align: center;
+    margin-bottom: 2rem;
   }
 
   .project {
-    margin: 10px;
+    margin: 25px;
     padding: 20px;
     height: 180px;
     border-radius: 20px;
-    background-color: #ffe2f7;
-    box-shadow: rgba(50, 50, 93, 0.25) 0px 50px 100px -20px, rgba(0, 0, 0, 0.3) 0px 30px 60px -30px;
-          
-    h3 {
+    background-color: #131922;
+    box-shadow: rgba(50, 50, 93, 0.25) 0px 50px 30px -10px, rgba(0, 0, 0, 0.3) 0px 20px 30px -30px;
+    transition: transform 0.3s, box-shadow 0.3s;
+
+    &:hover {
+      transform: translateY(-5px);
+      box-shadow: rgba(50, 50, 93, 0.35) 0px 70px 40px -15px, rgba(0, 0, 0, 0.4) 0px 30px 40px -35px;
+    }
+    
+    a {
       margin: 0 0 10px;
-      font-size: 18px;
+      font-size: 20px;
+      font-weight: 600;
+      color: #4493f8;
+      &:hover {
+        text-decoration: underline !important;
+      }
     }
 
     p {
       margin: 5px 0;
-      font-size: 22px;
+      font-size: 16px;
+      color: #8d96a0;
     }
 
-    a {
-      text-decoration: none;
-      color: black;
-      font-size: 20px;
-
+    .tecnologias {
+      font-size: 14px;
+        color: #666;
     }
+
+    .private {
+      color: red;
+      font-weight: bold;
+    }
+
   }
 }
-  
+
 .owl-carousel .owl-item {
-  width: 300px;
+  width: 400px;
   height: 400px;
 }
