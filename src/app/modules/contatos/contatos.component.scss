@@ -4,6 +4,7 @@
     color: white;
     height: auto;
     padding: 10rem 4rem;
+    text-align: center;
 }
 
 .container-conteudo{
@@ -11,11 +12,25 @@
   margin: 8rem auto;
 }
 
-.texto-sobre{
+.texto-sobre-contatos{
     width: 600px;
     >p{
-        font-size: 18px;
+        font-size: 24px;
         line-height: 30px;
+        font-weight: 300;
+    }
+    >h1{
+        font-size: 38px;
+    }
+    >a{
+        font-size: 24px;
+        font-weight: 300;
+        text-decoration: none;
+        color: white;
+        transition: 0.4s;
+        &:hover { 
+            text-shadow:  15px 15px 15px rgba(0, 0, 0, 0.397);
+        }
     }
 }
 

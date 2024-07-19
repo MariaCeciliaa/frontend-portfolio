@@ -1,39 +1,42 @@
-<div class="projetos">
-  <div class="container-conteudo">
-      <div class="texto-sobre-projeto">
-          <h1>Meus projetos</h1>
-          <p>
-             Os meus projetos em desenvolvimento ou já finalizados se encontram no meu perfil do Github. Abaixo você pode acessar alguns dos repositórios.
-          </p>  
-          <a href="https://github.com/MariaCeciliaa" target="_blank">Para acessar meu perfil clique aqui.</a> 
-      </div>
+<div class="cointainer-projeto-all">
+  <div class="projetos">
+    <div class="container-conteudo">
+        <div class="texto-sobre-projeto">
+            <h1>Meus projetos</h1>
+            <p>
+               Os meus projetos em desenvolvimento ou já finalizados se encontram no meu perfil do Github. Abaixo você pode acessar alguns dos repositórios.
+            </p>  
+            <a href="https://github.com/MariaCeciliaa" target="_blank">Para acessar meu perfil clique aqui.</a> 
+        </div>
+    </div>
+  </div>
+  
+  <div class="projects-container">
+    <div *ngIf="repos.length > 0" style="margin-right: 1.5rem; margin-left: 1.5rem;">
+      <owl-carousel-o [options]="customOptions">
+        <ng-container *ngFor="let repo of repos">
+          <ng-template carouselSlide>
+            <div class="project">
+              <a [href]="repo.html_url" target="_blank" style="text-decoration: none;">{{ repo.name }}</a>
+              <p>{{ repo.description }}</p>
+              <p>Status: <span [class.private]="repo.private">{{ repo.private ? 'Privado' : 'Público' }}</span></p>
+              <p>🌟 {{ repo.stargazers_count }} | 🍴 {{ repo.forks_count }}</p>
+              <p>Última atualização: {{ repo.updated_at | date:'short' }}</p>
+              <p *ngIf="hasLanguages(repo)" class="tecnologias">Tecnologias: 
+                <span *ngFor="let language of repo.languages | keyvalue; let isLast = last">
+                  {{ language.key }}<span *ngIf="!isLast">, </span>
+                </span>
+              </p>
+            </div>
+          </ng-template>
+        </ng-container>
+      </owl-carousel-o>
+    </div>
+    <div *ngIf="repos.length === 0">
+      <p>Nenhum repositório encontrado.</p>
+    </div>
   </div>
 </div>
 
-<div class="projects-container">
-  <div *ngIf="repos.length > 0" style="margin-right: 1.5rem; margin-left: 1.5rem;">
-    <owl-carousel-o [options]="customOptions">
-      <ng-container *ngFor="let repo of repos">
-        <ng-template carouselSlide>
-          <div class="project">
-            <a [href]="repo.html_url" target="_blank" style="text-decoration: none;">{{ repo.name }}</a>
-            <p>{{ repo.description }}</p>
-            <p>Status: <span [class.private]="repo.private">{{ repo.private ? 'Privado' : 'Público' }}</span></p>
-            <p>🌟 {{ repo.stargazers_count }} | 🍴 {{ repo.forks_count }}</p>
-            <p>Última atualização: {{ repo.updated_at | date:'short' }}</p>
-            <p *ngIf="hasLanguages(repo)" class="tecnologias">Tecnologias: 
-              <span *ngFor="let language of repo.languages | keyvalue; let isLast = last">
-                {{ language.key }}<span *ngIf="!isLast">, </span>
-              </span>
-            </p>
-          </div>
-        </ng-template>
-      </ng-container>
-    </owl-carousel-o>
-  </div>
-  <div *ngIf="repos.length === 0">
-    <p>Nenhum repositório encontrado.</p>
-  </div>
-</div>
 
 

@@ -1,3 +1,17 @@
+.sobre-mim{
+    display: flex;
+    color: white;
+    margin-top: 50px;
+    height: auto;
+    padding: 8rem 0 5rem 0;
+}
+
+.container-conteudo{
+  display: flex;
+  margin: 8rem auto 15rem auto;
+  align-items: center;
+}
+
 img{
   width: 300px;
   height: 300px;
@@ -16,20 +30,6 @@ img{
   }
 }
 
-.sobre-mim{
-    display: flex;
-    color: white;
-    margin-top: 50px;
-    height: auto;
-    padding: 8rem 0 5rem 0;
-}
-
-.container-conteudo{
-  display: flex;
-  margin: 8rem auto;
-  align-items: center;
-}
-
 .texto-sobre{
     width: 600px;
     >p{
@@ -41,6 +41,7 @@ img{
     }
     >h1{
       margin-bottom: 0;
+      font-size: 40px;
     }
 }
 
