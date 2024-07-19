@@ -1,26 +1,32 @@
 <div class="projetos">
-    <div class="container-conteudo">
-        <div class="texto-sobre">
-            <h1>Meus projetos</h1>
-            <p>
-               Todos os meus projetos já criados se encontram no meu perfil do Github.
-            </p>
-            <a href="https://github.com/MariaCeciliaa" target="_blank" style="text-decoration: none;">Aqui!!</a>
-
-            <div class="projects-container">
-                <h2>Meus Projetos no GitHub</h2>
-                <div *ngIf="repos.length > 0">
-                  <div *ngFor="let repo of repos" class="project">
-                    <h3>{{ repo.name }}</h3>
-                    <p>{{ repo.description }}</p>
-                    <a [href]="repo.html_url" target="_blank">Acessar Repositório</a>
-                  </div>
-                </div>
-                <div *ngIf="repos.length === 0">
-                  <p>Nenhum repositório encontrado.</p>
-                </div>
-            </div>
-            
-        </div>
-    </div>
+  <div class="container-conteudo">
+      <div class="texto-sobre-projeto">
+          <h1>Meus projetos</h1>
+          <p>
+             Os meus projetos em desenvolvimento ou já finalizados se encontram no meu perfil do Github. Abaixo você pode acessar alguns dos repositórios.
+          </p>  
+          <a href="https://github.com/MariaCeciliaa" target="_blank">Para acessar meu perfil clique aqui.</a> 
+      </div>
+  </div>
 </div>
+
+<div class="projects-container">
+<div *ngIf="repos.length > 0">
+  <owl-carousel-o [options]="customOptions">
+    <ng-container *ngFor="let repo of repos">
+      <ng-template carouselSlide>
+        <div class="project">
+          <h3>{{ repo.name }}</h3>
+          <p>{{ repo.description }}</p>
+          <a [href]="repo.html_url" target="_blank" style="text-decoration: none;">Acessar Repositório</a>
+        </div>
+      </ng-template>
+    </ng-container>
+  </owl-carousel-o>
+</div>
+<div *ngIf="repos.length === 0">
+  <p>Nenhum repositório encontrado.</p>
+</div>
+</div>
+
+

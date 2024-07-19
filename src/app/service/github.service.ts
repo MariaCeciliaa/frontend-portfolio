@@ -9,7 +9,7 @@ import { Observable } from 'rxjs';
 export class GithubService {
 
   private username = 'MariaCeciliaa'; 
-  private token = 'seu-token-de-acesso'; // Substitua pelo seu token de acesso, se estiver usando
+  private token = 'aaaaaaaaaaa'; //expira dia 01/07/2025
   private apiUrl = `https://api.github.com/users/${this.username}/repos`;
 
   constructor(private http: HttpClient) {}
