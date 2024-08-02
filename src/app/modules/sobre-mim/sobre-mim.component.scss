@@ -1,15 +1,17 @@
 .sobre-mim{
-    display: flex;
-    color: white;
-    margin-top: 50px;
-    height: auto;
-    padding: 8rem 0 5rem 0;
+  display: flex;
+  color: white;
+  margin-top: 50px;
+  height: auto;
+  padding: 8rem 0 5rem 0;
+  transition: 0.4s;
 }
 
 .container-conteudo{
   display: flex;
   margin: 8rem auto 15rem auto;
   align-items: center;
+  transition: 0.4s;
 }
 
 img{
@@ -19,6 +21,7 @@ img{
   animation: fly 3s ease-in-out infinite;
   box-shadow: rgba(0, 0, 0, 0.192) 0px 19px 38px, rgba(0, 0, 0, 0.22) 0px 15px 12px;
   border-radius: 3%;
+  transition: 0.4s;
 }
 
 @keyframes fly {
@@ -33,15 +36,17 @@ img{
 .texto-sobre{
     width: 600px;
     >p{
-        font-size: 22px;
-        line-height: 30px;
-        text-align: left;
-        width: 550px;
-        font-weight: 300;
+      font-size: 22px;
+      line-height: 30px;
+      text-align: left;
+      width: 550px;
+      font-weight: 300;
+      transition: 0.4s;
     }
     >h1{
       margin-bottom: 0;
       font-size: 40px;
+      transition: 0.4s;
     }
 }
 
@@ -51,24 +56,91 @@ img{
     white-space: nowrap;
     overflow: hidden;
     animation: blink-caret 0.75s step-end infinite;
-  }
+}
   
-  @keyframes blink-caret {
-    from, to {
-      border-color: transparent;
-    }
-    50% {
-      border-color: #f5f5f59f;
-    }
+@keyframes blink-caret {
+  from, to {
+    border-color: transparent;
   }
+  50% {
+    border-color: #f5f5f59f;
+  }
+}
   
-  @media (max-width: 1060px) {
+@media (max-width: 1180px) {
+    .sobre-mim{
+      margin-top: 30px;
+      padding: 8rem 0 0 0;
+    }
 
     .container-conteudo{
-      display: contents;
+      margin: 8rem auto 10rem auto;
     }
 
     img{
       margin-top: 2rem;
+      width: 200px;
+      height: 200px;
+    }
+
+    .texto-sobre{
+      width: auto;
+      >p{
+          font-size: 18px;
+          line-height: 26px;
+          width: 450px;
+          font-weight: 400;
+      }
+      >h1{
+        margin-bottom: 0;
+        font-size: 28px;
+      }
+  }
+}
+
+@media (max-width: 780px) {
+  .sobre-mim {
+    margin-top: 0px;
+    padding: 4rem 0 2rem 0;
+  }
+
+  .container-conteudo {
+    flex-direction: column; 
+    align-items: center;
+  }
+
+  .texto-sobre {
+    text-align: center;
+  }
+
+  .texto-sobre > p {
+    text-align: center;
+  }
+
+  img{
+    margin-left: 0rem;
+  }
+}
+
+@media (max-width: 600px) {
+  .texto-sobre{
+    width: auto;
+    margin-bottom: 1.5rem;
+    >p{
+        font-size: 14px;
+        line-height: 22px;
+        width: auto;
+        margin: 0 3rem;
+    }
+    >h1{
+      margin-bottom: 0;
+      font-size: 20px;
+      margin-bottom: 0.5rem;
     }
   }
+
+  .container-conteudo{
+    margin: 8rem auto 2rem auto;
+  }
+
+}

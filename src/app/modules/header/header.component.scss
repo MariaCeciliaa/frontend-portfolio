@@ -38,9 +38,18 @@
         >a{
           text-decoration: none;
           color: #551A8B;
+          transition: 0.4s;
         }
     }
 
     }
 }
   
+
+@media (max-width: 640px) {
+  .nav-item {
+    >a{
+      font-size: 18px;
+    }
+  }
+}

@@ -14,4 +14,9 @@
       color: #551A8B;
     }
   }
-  
+
+@media (max-width: 640px) {
+  .text-muted {
+    font-size: 18px;
+  }
+}
