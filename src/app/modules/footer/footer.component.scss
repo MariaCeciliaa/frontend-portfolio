@@ -12,11 +12,15 @@
     .text-muted {
       font-size: 20px;
       color: #551A8B;
+      transition: 0.4s;
     }
-  }
+}
 
 @media (max-width: 640px) {
   .text-muted {
-    font-size: 18px;
+    font-size: 14px !important;
+  }
+  .footer {
+    height: 65px;
   }
 }

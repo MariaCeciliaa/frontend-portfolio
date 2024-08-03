@@ -47,9 +47,14 @@
   
 
 @media (max-width: 640px) {
+  .navbar {
+    height: 20px;
+    padding-top: 1rem;
+  }
+
   .nav-item {
     >a{
-      font-size: 18px;
+      font-size: 15px;
     }
   }
 }
