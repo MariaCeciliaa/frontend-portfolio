@@ -144,3 +144,15 @@ img{
   }
 
 }
+
+@media (max-width: 360px) {
+  .texto-sobre{
+    >p{
+      margin: 0 1rem;
+    }
+    >h1{
+      font-size: 22px;
+    }
+  }
+
+}
