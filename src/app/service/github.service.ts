@@ -19,19 +19,21 @@ export class GithubService {
     const headers = new HttpHeaders({
       'Authorization': `token ${this.token}`
     });
-
-    return this.http.get<any[]>(this.apiUrl, { headers });
+  
+    const url = `http://localhost:5000/api/github/repos?username=${this.username}`; // Adiciona o parâmetro de consulta
+  
+    return this.http.get<any[]>(url, { headers });
   }
-
+  
   getRepoLanguages(repoName: string): Observable<any> {
-    const url = `https://api.github.com/repos/${this.username}/${repoName}/languages`;
+    const url = `http://localhost:5000/api/github/repos/${repoName}/languages?username=${this.username}`; // Adiciona o parâmetro de consulta
     const headers = new HttpHeaders({
       'Authorization': `token ${this.token}`
     });
-
+  
     return this.http.get<any>(url, { headers });
   }
-
+  
   getReposWithLanguages(): Observable<any[]> {
     return this.getRepos().pipe(
       switchMap(repos => {
@@ -44,4 +46,5 @@ export class GithubService {
       })
     );
   }
+  
 }
