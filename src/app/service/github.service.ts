@@ -1,37 +1,24 @@
-import { HttpClient, HttpHeaders } from '@angular/common/http';
+import { HttpClient } from '@angular/common/http';
 import { Injectable } from '@angular/core';
 import { Observable, forkJoin } from 'rxjs';
 import { map, switchMap } from 'rxjs/operators';
-import { environment } from '../../environments/environment.development';
 
 @Injectable({
   providedIn: 'root'
 })
 export class GithubService {
-
   private username = 'MariaCeciliaa'; 
-  private token = environment.token;
-  private apiUrl = `https://api.github.com/users/${this.username}/repos`;
 
   constructor(private http: HttpClient) {}
 
   getRepos(): Observable<any[]> {
-    const headers = new HttpHeaders({
-      'Authorization': `token ${this.token}`
-    });
-  
-    const url = `http://localhost:5000/api/github/repos?username=${this.username}`; // Adiciona o parâmetro de consulta
-  
-    return this.http.get<any[]>(url, { headers });
+    const url = `https://backend-portfolio-front-826cbf41aeee.herokuapp.com/api/github/repos?username=${this.username}`; 
+    return this.http.get<any[]>(url);
   }
   
   getRepoLanguages(repoName: string): Observable<any> {
-    const url = `http://localhost:5000/api/github/repos/${repoName}/languages?username=${this.username}`; // Adiciona o parâmetro de consulta
-    const headers = new HttpHeaders({
-      'Authorization': `token ${this.token}`
-    });
-  
-    return this.http.get<any>(url, { headers });
+    const url = `https://backend-portfolio-front-826cbf41aeee.herokuapp.com/api/github/repos/${repoName}/languages?username=${this.username}`; 
+    return this.http.get<any>(url);
   }
   
   getReposWithLanguages(): Observable<any[]> {
