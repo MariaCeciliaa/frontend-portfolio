@@ -12,12 +12,12 @@ export class GithubService {
   constructor(private http: HttpClient) {}
 
   getRepos(): Observable<any[]> {
-    const url = `https://backend-portfolio-front-826cbf41aeee.herokuapp.com/api/github/repos?username=${this.username}`; 
+    const url = `https://backend-portfolio-frontend.onrender.com/api/github/repos?username=${this.username}`; 
     return this.http.get<any[]>(url);
   }
   
   getRepoLanguages(repoName: string): Observable<any> {
-    const url = `https://backend-portfolio-front-826cbf41aeee.herokuapp.com/api/github/repos/${repoName}/languages?username=${this.username}`; 
+    const url = `https://backend-portfolio-frontend.onrender.com/api/github/repos/${repoName}/languages?username=${this.username}`; 
     return this.http.get<any>(url);
   }
   
